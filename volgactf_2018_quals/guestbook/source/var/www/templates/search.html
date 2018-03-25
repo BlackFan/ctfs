@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VolgaCTF Guestbook</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Guestbook</a></div>
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/search">Search</a></li>
+      </ul>
+    
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Search</h1>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <form action="/search" method="get">
+    <div class="form-group">
+    	<label for="hText">Text</label>
+      <input type="text" class="form-control" id="hText" placeholder="Text (required)" name="search" value="%search%" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Results</h1>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <div class="panel-group">         
+    
+    %posts%
+
+  </div>
+</div>
+
+  
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="text-center col-md-6 col-md-offset-3">
+      <h4>VolgaCTF 2018 Guestbook</h4>
+    </div>
+  </div>
+</div>
+</body>
+</html>

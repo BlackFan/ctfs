@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VolgaCTF Guestbook</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Guestbook</a></div>
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/search">Search</a></li>
+      </ul>
+    
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Guestbook</h1>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <form action="/" method="post">
+    <div class="form-group">
+    	<label for="hName">Name</label>
+      <input type="text" class="form-control" id="hName" placeholder="Name (required)" name="name" maxlength="50" required>
+    </div>
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="5" id="hComment" placeholder="Comment (required)" name="text" maxlength="500" required></textarea>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success" name="submit">Submit</button>
+  </form>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Last 10 Posts</h1>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <div class="panel-group">     
+
+    %posts%
+
+  </div>
+</div>
+
+  
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="text-center col-md-6 col-md-offset-3">
+      <h4>VolgaCTF 2018 Guestbook</h4>
+    </div>
+  </div>
+</div>
+</body>
+</html>
