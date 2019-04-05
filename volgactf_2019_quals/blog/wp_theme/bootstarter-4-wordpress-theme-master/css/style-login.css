@@ -1,0 +1,19 @@
+body.login div#login h1 a {
+    background-image: url("../img/logo@2x.png");
+    background-position: center center;
+    background-size: contain;
+    width: 100%;
+}
+body.login {
+	/*background: #fff;*/
+}
+.login #backtoblog a, .login #nav a, .login label {
+	color: #000;
+}
+#wp-submit {
+    /*background-color: #aa0025;
+    color: #ffffff;*/
+    border: medium none;
+    border-radius: 0;
+    box-shadow: none;
+}

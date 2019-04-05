@@ -1,0 +1,20 @@
+{
+  "name": "volga_auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "express-unless": "^0.5.0",
+    "fs": "0.0.1-security",
+    "http-proxy-middleware": "^0.19.1",
+    "session-file-store": "^1.2.0"
+  }
+}

@@ -1,0 +1,141 @@
+/*--------------------------------------*/
+/* WORDPRESS ALIGNING AND CLEARING
+/*--------------------------------------*/
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+@media (min-width: 576px) { /* SM MD LG XL and up */
+    .alignleft {
+    	display: inline;
+    	float: left;
+    	margin-right: 1rem;
+    }
+    .alignright {
+    	display: inline;
+    	float: right;
+    	margin-left: 1rem;
+    }
+}
+.entry-content figure {
+    width: auto !important;
+}
+.entry-content img {
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 567.98px) { /* XS and down */
+    img {
+        width: 100%;
+    }
+}
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.screen-reader-text:active, .screen-reader-text:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+/*--------------------------------------*/
+/* GLOBAL
+/*--------------------------------------*/
+body, a {
+    /*-webkit-font-smoothing:antialiased;*/
+    /*-moz-osx-font-smoothing: grayscale;*/
+}
+.container-fluid {
+    max-width: 1200px;
+}
+.transition {
+    -webkit-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s;
+}
+.bg-cover {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-contain {
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+a, a:hover, a:focus, button {
+    outline: 0 !important;
+}
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+/*--------------------------------------*/
+/* MEDIA QUERIES
+/*--------------------------------------*/
+@media (min-width: 576px) { /* SM MD LG XL and up */
+
+}
+@media (min-width: 768px) { /* MD LG XL and up */
+
+}
+@media (min-width: 992px) { /* LG XL and up */
+
+}
+@media (min-width: 1200px) { /* XL and up */
+
+}
+@media (min-width: 992px) and (max-width: 1199.98px) { /* LG only */
+
+}
+@media (min-width: 768px) and (max-width: 991.98px) { /* MD only */
+
+}
+@media (min-width: 576px) and (max-width: 767.98px) { /* SM only */
+
+}
+@media (max-width: 1199.98px) { /* LG MD SM XS and down */
+
+}
+@media (max-width: 991.98px) { /* MD SM XS and down */
+
+}
+@media (max-width: 767.98px) { /* SM XS and down */
+
+}
+@media (max-width: 575.98px) { /* XS and down */
+
+}
