@@ -1,0 +1,11 @@
+index:
+    path: /
+    controller: App\Controller\MainController::index
+
+source:
+    path: /source
+    controller: App\Controller\MainController::source
+
+subscribe:
+    path: /subscribe
+    controller: App\Controller\MainController::subscribe

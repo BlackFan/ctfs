@@ -1,0 +1,84 @@
+server {
+  server_name volgactf-task.ru;
+
+  root /var/www/html;
+  index index.html;
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+
+  location ~ \.php(|/.*)$ {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+  }
+
+  listen [::]:443 ssl ipv6only=on;
+  listen 443 ssl;
+  ssl_certificate /etc/letsencrypt/live/volgactf-task.ru/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/volgactf-task.ru/privkey.pem;
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+}
+
+server {
+  server_name static.volgactf-task.ru;
+
+  location / {
+    limit_except GET {
+      deny all;
+    }
+    add_header X-Content-Type-Options nosniff;
+    proxy_buffering off;
+    proxy_pass https://volgactf-task2-storage.s3.us-west-1.amazonaws.com/;
+  }
+
+  listen [::]:443;
+  listen 443;
+  ssl_certificate /etc/letsencrypt/live/static.volgactf-task.ru/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/static.volgactf-task.ru/privkey.pem;
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+}
+
+server {
+  server_name api.volgactf-task.ru;
+
+  root /var/www/api;
+  index api.php;
+
+  location / {
+    try_files $uri /api.php$request_uri;
+  }
+
+  location ~ ^/api.php(|/.*)$ {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+  }
+
+  listen [::]:443;
+  listen 443;
+  ssl_certificate /etc/letsencrypt/live/api.volgactf-task.ru/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/api.volgactf-task.ru/privkey.pem;
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+}
+
+server {
+  if ($host = volgactf-task.ru) {
+    return 301 https://$host$request_uri;
+  }
+  if ($host = static.volgactf-task.ru) {
+    return 301 https://$host$request_uri;
+  }
+  if ($host = api.volgactf-task.ru) {
+    return 301 https://$host$request_uri;
+  }
+
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	server_name volgactf-task.ru;
+  return 404;
+}
