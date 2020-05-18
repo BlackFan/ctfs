@@ -1,4 +1,8 @@
 <?php
+  # DEFCON CTF Qualifier 2020
+  # bytecoooding task
+  # jvm-elisp-lua-python2-python3 polyglot generator
+
   $payload = 
     "\x04\x01\x82\x8c\x04".                                                       /* jvm CONSTANT_Float | elisp GOTO */
     "\x05\xff\xff\xff\x32\x01\x00\x00\x00\x05\x00\x00\x17\x00\x49\x80\x00\x00".   /* jvm CONSTANT_Long  | lua   JMP  */
