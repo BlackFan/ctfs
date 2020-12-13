@@ -1,0 +1,260 @@
+body
+{
+background:url(images/bg.jpg) no-repeat center top #000000;
+padding:0;
+font-family:Georgia, "Times New Roman", Times, serif;
+font-size:12px;
+margin:0px auto auto auto;
+color:#696767;
+}
+p{
+padding:0px 0 20px 0;
+text-align:justify;
+margin:0px;
+line-height:17px;
+}
+p.tips{
+padding:0px 0 7px 0;
+text-align:justify;
+margin:0px;
+line-height:17px;
+border-bottom:1px #cebf91 dashed;
+}
+h1{
+color:#7e5025;
+padding:5px 0 10px 0;
+margin:0px;
+font-size:19px;
+font-weight:normal;
+}
+h2{
+color:#2d7513;
+padding:0px 0 5px 0;
+margin:0px;
+font-size:12px;
+font-weight:bold;
+}
+a.read_more{
+display:block;
+color:#855f35;
+float:right;
+font-style:italic;
+margin:5px 0 0 0;
+text-decoration:none;
+font-size:12px;
+}
+a:hover.read_more{
+text-decoration:underline;
+}
+
+img.left_icon{
+float:left;
+padding:0px 15px 0px 0px;
+}
+img.right_icon{
+float:right;
+padding:0px 0px 0px 15px;
+}
+.clear{
+clear:both;
+}
+a{
+text-decoration:underline;
+}
+#main_container{
+width:960px;
+height:auto;
+margin:auto;
+padding:0px;
+position:relative;
+}
+.top_leafs{
+position:absolute;
+top:0px;
+left:11px;
+z-index:200;
+}
+#header{
+width:960px;
+height:196px;
+margin:0px;
+padding:0px;
+background:url(images/header_bg.jpg) no-repeat top center;
+}
+.logo{
+width:290px;
+text-align:center;
+font-size:28px;
+color:#7e5025;
+float:left;
+padding:110px 0 0 112px;
+}
+.logo a{
+color:#7e5025;
+text-decoration:none;
+}
+/*---------------- menu tab----------------------*/
+.menu{
+width:470px;
+float:left;
+padding:145px 0 0 40px;
+}
+.menu ul{
+list-style:none;
+padding:0px;
+margin:0px;
+}
+.menu ul li{
+display:inline;
+}
+.menu ul li a{
+float:left;
+border:none;
+margin:0 10px 0 10px;
+_margin:0 7px 0 7px;
+text-decoration:none;
+color:#754928;
+font-size:14px;
+font-weight:bold;
+}
+.menu ul li a:hover{
+color:#754928;
+border-bottom:3px #bc8d46 solid;
+}
+.menu ul li.selected a{
+float:left;
+border:none;
+margin:0 10px 0 10px;
+text-decoration:none;
+color:#754928;
+font-size:14px;
+font-weight:bold;
+border-bottom:3px #bc8d46 solid;
+}
+
+
+/*-------------center_content-------------*/
+#center_content{
+width:819px;
+margin:auto auto 20px auto;
+height:auto;
+background-color:#fef8e6;
+}
+.left_content{
+width:410px;
+float:left;
+padding:15px 10px 10px 60px;
+}
+.right_content{
+width:290px;
+float:left;
+padding:0 10px 10px 20px;
+}
+.bottom_content{
+width:819px;
+height:300px;
+clear:both;
+margin:auto;
+background:url(images/bottom_bg.jpg) no-repeat top center;
+}
+.photos_block{
+padding:10px 0 10px 0;
+}
+.photo_box{
+width:114px;
+height:111px;
+float:left;
+display:block;
+text-align:center;
+margin:0 18px 0 0;
+position:relative;
+background:url(images/photo_bg.gif) no-repeat center;
+}
+img.photo{
+padding:6px 0 0 0;
+}
+a.view{
+float:right;
+padding:4px 6px 0 0;
+text-decoration:none;
+color:#706443;
+}
+.tip_box{
+clear:both;
+float:left;
+width:290px;
+padding:0 0 15px 0;
+}
+.news_box{
+clear:both;
+float:left;
+width:290px;
+padding:5px 0 5px 0;
+}
+.date_box{
+width:47px;
+height:49px;
+float:left;
+text-align:center;
+line-height:25px;
+font-weight:bold;
+background:url(images/date_bg.gif) no-repeat center;
+}
+span.day{
+color:#855f35;
+}
+span.month{
+color:#fef8e5;
+}
+.news_content{
+width:230px;
+float:left;
+padding:0 0 0 10px;
+}
+
+.about_text{
+width:300px;
+padding:195px 0 0 30px;
+float:left;
+}
+.friends_list{
+width:180px;
+float:left;
+padding:195px 0 0 30px;
+}
+/*----------------------list-------------------------*/
+ul.list{
+list-style:none;padding:0px;margin:0px; 
+}
+ul.list li{
+list-style:none;width: auto;height: auto;padding:0 0 8px 0; margin:0px;
+}
+ul.list li a{
+width: auto; padding:0 0 0 15px; margin:0;color:#696767;text-align:left; display:block;
+text-decoration:none;background:url(images/footer_bullet.gif) no-repeat left;
+}
+ul.list li a:hover{
+text-decoration:underline;
+}
+.bottom_right{
+width:240px;
+float:left;
+text-align:center;
+padding:195px 0 0 15px;
+}
+.bottom_right a{
+padding:10px 0 10px 0;
+display:block;
+}
+
+.footer{
+clear:both;
+width:770px;
+margin:auto;
+text-align:center;
+padding:5px 0 0 0;
+font-size:11px;
+border-top:1px #cebf91 dashed;
+}
+
+

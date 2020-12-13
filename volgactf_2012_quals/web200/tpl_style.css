@@ -1,0 +1,217 @@
+/*
+Credit: http://www.templatemo.com
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #8e7555;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+	line-height: 1.6em; 
+	letter-spacing: 1px;
+	background-color: #000000;
+}
+
+a, a:link, a:visited { color: #770726; font-weight: normal; text-decoration: none }
+a:hover { color: #660; text-decoration: underline; }
+
+a.more { display: block; color: #770726; text-align: center; text-decoration: underline }
+a.more span { font-size: 14px; letter-spacing: -3px; }
+a.more:hover { color: #660; text-decoration: none }
+
+
+p { margin: 0 0 10px 0; padding: 0; }
+img { border: none; }
+blockquote { font-style: italic; margin: 0 0 0 10px;}
+cite { font-weight: bold; color: #c63a03; }
+cite a, cite a:link, cite a:visited  { font-weight: bold; color:#c63a03; }
+cite span { font-weight: 400; color: #8e7555; }
+em { color: #c63a03; }
+
+h1, h2, h3, h4, h5, h6 { color: #62260e; font-weight: normal; }
+h1 { font-size: 48px; margin: 0 0 30px; padding: 5px 0 }
+h2 { font-size: 34px; margin: 0 0 25px; padding: 5px 0; }
+h3 { font-size: 24px; margin: 0 0 20px; padding: 0; }
+h4 { font-size: 20px; margin: 0 0 15px; padding: 0; }
+h5 { font-size: 16px; margin: 0 0 10px; padding: 0;  }
+h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
+
+.cleaner { clear: both }
+
+.float_l { float: left }
+.float_r { float: right }
+
+.image_frame { display: inline-block; border: 5px solid #a38d68 }
+.image_fl { float: left; margin: 3px 20px 10px 0 }
+.image_fr { float: right; margin: 3px 0 0 20px }
+
+#tpl_wrapper {
+	position: relative;
+	width: 966px;
+	margin: 0 auto;
+}
+.bg_top { position: absolute; top: 0; left: -120px; width: 1200px; height: 570px; background: url(images/tpl_bg_top.png) no-repeat; z-index: -1000 }
+
+.bg_bottom { position: absolute; bottom: 0; left: -120px; width: 1200px; height: 270px; background: url(images/tpl_bg_bottom.png) no-repeat; z-index: -1200 }
+
+/* menu */
+
+#tpl_menu {
+	float: right;
+	width: 966px;
+	height: 75px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	background: url(images/tpl_menu.png) no-repeat
+}
+
+#tpl_menu ul {
+	margin: 0;
+	padding: 0 40px;
+	list-style: none;
+}
+
+#tpl_menu ul li {
+	padding: 0;
+	margin: 0;
+	display: block;
+	float: left;
+	width: 164px;
+	height: 75px;
+	background: url(images/tpl_menu_divider.png) center right no-repeat
+}
+
+#tpl_menu ul li a {
+	float: left;
+	display: block;
+	width: 160px;
+	height: 75px;
+	line-height: 75px;
+	padding-right: 4px;
+	font-size: 16px;
+	font-style: italic;
+	color: #62260e;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 700;
+	outline: none;
+	border: none;
+	
+}
+
+#tpl_menu ul li a:hover, #tpl_menu ul .current {
+	background: url(images/tpl_menu_hover.png) center center no-repeat
+}
+
+#tpl_menu .last { background: none }
+
+/* header */
+#tpl_header {
+	clear: both;
+	width: 966px;
+	height: 170px;
+	background: url(images/tpl_header.png) no-repeat center top
+}
+
+#site_title { float: left; width: 400px; height: 200px; margin: 60px 0 0 40px; background: url(images/pirate1.png) no-repeat left top;}
+
+#tpl_main {
+	width: 900px;
+	padding: 0 33px 0;
+	background: url(images/tpl_main.png) repeat-y
+}
+
+#tpl_main_bottom {
+	width: 966px;
+	height: 143px;
+	background: url(images/tpl_main_bottom.png) no-repeat
+}
+
+#content {
+	float: right;
+	width: 580px;
+}
+
+.cbox_fw {
+	clear: both;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+}
+
+.cbox_fws {
+	clear: both;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+}
+
+.cbox_w350 { width: 350px; margin-bottom: 20px; }
+.cbox_w350 img { margin-bottom: 10px }
+
+#member_login {
+	width: 230px;
+	height: 170px;
+	padding: 25px;
+	background: url(images/tpl_login.png)
+}
+
+#member_login h3 {
+	color: #494847;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #b6aa99;
+}
+
+#member_login form {
+	margin: 0;
+	padding: 0;
+}
+
+#member_login label {
+	float: left;
+	width: 80px;
+	color: #62260e;
+}
+
+#member_login .txt_field {
+	float: right;
+	display: block;
+	height: 29px;
+	width: 132px;
+	color: #000;
+	font-size: 12px;
+	padding: 0 5px;
+	font-variant: normal;
+	line-height: normal;
+	background: none;
+	border: none;	
+	line-height: 30px;
+	background: url(images/tpl_txtfield.png) no-repeat 
+}
+#member_login .sub_btn {
+	float: right;
+	display: block;
+ 	height: 32px;
+	width: 87px;
+	cursor: pointer;
+	font-size: 12px;
+	text-align: center;
+	vertical-align: bottom;
+	white-space: pre;
+	color: #000;
+	border: none;
+	background: url(images/tpl_login_btn.png)
+}
+
+/* footer */
+#tpl_footer{
+	clear: both;
+	width: 900px;
+	padding: 0 33px 20px;	
+	color: #999494;
+	text-align: center;
+}
+
+#tpl_footer a { 
+	color: #999494;
+}

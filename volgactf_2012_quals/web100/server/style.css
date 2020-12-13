@@ -1,0 +1,33 @@
+*{margin: 0; padding: 0;}
+a, a:visited {color:#910504;}
+a:hover {color:#E03C0B;}
+
+p {margin-bottom: 10px;}
+h1 {margin-bottom: 25px; font-size: 24px;}
+h2 {margin-bottom: 15px; font-size: 20px;}
+h2#sitename {position: absolute; left: 200px; top:220px; font-size: 38px;}
+html,body {background-color: #000; color: #FFF; height: 100%; font-size: 14px; font-family: Arial, Helvetica, sans-serif; line-height: 150%;}
+#wrapper {min-height: 100%; width: 766px; margin: 0 auto; }
+#header {background:url(images/top_bg.jpg) top center no-repeat; height: 382px; position: relative;}
+#main {background:url(images/main_bg.jpg) top repeat-y; padding-bottom: 50px;}
+#inner {margin: 0 auto; width: 600px;}
+#footer {height: 53px; background:url(images/foot_bg.jpg) top center no-repeat;}
+#footer p {padding-top: 25px; margin-left: 50px; text-align: center;}
+.navigation {text-align: center;}
+.h2_comment {margin-top: 30px;}
+.comment_body {overflow: hidden;}
+.coment_avatar {height: 100px; width:100px; float: left; background:url(images/ava.jpg) top center no-repeat;}
+.comment_text {margin-left: 130px;}
+.comm_info {margin-bottom: 15px; font-weight: bold;}
+.date {font-size: 10px;}
+.autor {font-size: 16px;}
+.comment {margin-bottom: 15px; border-bottom: 1px #fff dotted; padding: 0 10px 20px 10px;}
+.comm_textarea {width: 498px; height: 80px;}
+.nameline {margin-bottom: 10px;}
+.nameline label {padding-right: 15px;}
+.nameline input {width: 250px;}
+.area label {display: block; margin-bottom: 5px;}
+.subm {width: 500px;}
+.subm input {float: right; padding: 2px 5px;}
+
+.post {margin-bottom: 15px; border-bottom: 1px #fff dotted; padding: 0 0 20px 0;}

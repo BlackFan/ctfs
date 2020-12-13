@@ -1,0 +1,270 @@
+/*
+Credit: http://www.templatemo.com
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #8e7555;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+	line-height: 1.6em; 
+	letter-spacing: 1px;
+	background-color: #000000;
+}
+
+a, a:link, a:visited { color: #770726; font-weight: normal; text-decoration: none }
+a:hover { color: #660; text-decoration: underline; }
+
+a.more { display: block; color: #770726; text-align: center; text-decoration: underline }
+a.more span { font-size: 14px; letter-spacing: -3px; }
+a.more:hover { color: #660; text-decoration: none }
+
+
+p { margin: 0 0 10px 0; padding: 0; }
+img { border: none; }
+blockquote { font-style: italic; margin: 0 0 0 10px;}
+cite { font-weight: bold; color: #c63a03; }
+cite a, cite a:link, cite a:visited  { font-weight: bold; color:#c63a03; }
+cite span { font-weight: 400; color: #8e7555; }
+em { color: #c63a03; }
+
+h1, h2, h3, h4, h5, h6 { color: #62260e; font-weight: normal; }
+h1 { font-size: 48px; margin: 0 0 30px; padding: 5px 0 }
+h2 { font-size: 34px; margin: 0 0 25px; padding: 5px 0; }
+h3 { font-size: 24px; margin: 0 0 20px; padding: 0; }
+h4 { font-size: 20px; margin: 0 0 15px; padding: 0; }
+h5 { font-size: 16px; margin: 0 0 10px; padding: 0;  }
+h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
+
+.cleaner { clear: both }
+.h10 { height: 10px }
+.h20 { height: 20px }
+.h30 { height: 30px }
+.h40 { height: 40px }
+.h50 { height: 50px }
+.h60 { height: 60px }
+
+.float_l { float: left }
+.float_r { float: right }
+
+.image_frame { display: inline-block; border: 5px solid #a38d68 }
+.image_fl { float: left; margin: 3px 20px 10px 0 }
+.image_fr { float: right; margin: 3px 0 0 20px }
+
+.tmo_list { list-style: disc; padding: 0 0 0 15px }
+.tmo_list li { color:#c63a03; margin-bottom: 8px }
+.tmo_list li a { color: #c63a03; font-weight: normal; text-decoration: none }
+.tmo_list li a:hover { text-decoration: underline }
+
+.link_list { list-style: none; padding: 0}
+.link_list li { color:#c63a03; margin-bottom: 8px; border-bottom: 1px dashed #726e6e}
+.link_list li a { color: #c63a03; font-weight: normal; text-decoration: none;  }
+.link_list li a:hover { text-decoration: underline }
+
+#tpl_wrapper {
+	position: relative;
+	width: 966px;
+	margin: 0 auto;
+}
+.bg_top { position: absolute; top: 0; left: -120px; width: 1200px; height: 570px; background: url(images/tpl_bg_top.png) no-repeat; z-index: -1000 }
+
+.bg_bottom { position: absolute; bottom: 0; left: -120px; width: 1200px; height: 270px; background: url(images/tpl_bg_bottom.png) no-repeat; z-index: -1200 }
+
+/* menu */
+
+#tpl_menu {
+	float: right;
+	width: 966px;
+	height: 75px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	background: url(images/tpl_menu.png) no-repeat
+}
+
+#tpl_menu ul {
+	margin: 0;
+	padding: 0 40px;
+	list-style: none;
+}
+
+#tpl_menu ul li {
+	padding: 0;
+	margin: 0;
+	display: block;
+	float: left;
+	width: 164px;
+	height: 75px;
+	background: url(images/tpl_menu_divider.png) center right no-repeat
+}
+
+#tpl_menu ul li a {
+	float: left;
+	display: block;
+	width: 160px;
+	height: 75px;
+	line-height: 75px;
+	padding-right: 4px;
+	font-size: 16px;
+	font-style: italic;
+	color: #62260e;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 700;
+	outline: none;
+	border: none;
+	
+}
+
+#tpl_menu ul li a:hover, #tpl_menu ul .current {
+	background: url(images/tpl_menu_hover.png) center center no-repeat
+}
+
+#tpl_menu .last { background: none }
+
+/* header */
+#tpl_header {
+	clear: both;
+	width: 966px;
+	height: 170px;
+	background: url(images/tpl_header.png) no-repeat center top
+}
+
+#site_title { float: left; width: 400px; margin: 60px 0 0 40px; }
+#site_title h1 { margin: 0; padding: 0 }
+#site_title h1 a { display: block; width: 334px; padding: 70px 0 0 20px;  background: url(images/tpl_logo.png) no-repeat left top; font-size: 18px; color: #88553a; }
+
+#social { float: right; margin: 60px 40px 0 0 }
+#social a { float: left; margin-left: 10px } 
+
+#tpl_main {
+	width: 900px;
+	padding: 33px 33px 0;
+	background: url(images/tpl_main.png) repeat-y
+}
+
+#tpl_main_bottom {
+	width: 966px;
+	height: 143px;
+	background: url(images/tpl_main_bottom.png) no-repeat
+}
+
+#sidebar { 
+	float: left;
+	width: 280px;
+}
+
+#content {
+	float: right;
+	width: 580px;
+}
+
+.cbox_fw {
+	clear: both;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+}
+
+.cbox_fws {
+	clear: both;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+}
+
+.cbox_last {
+	padding: 0; margin: 0; background: none;
+}
+
+.cbox_w280 { width: 280px; margin-bottom: 20px; }
+.cbox_w280 img { margin-bottom: 10px }
+
+#nne {
+	margin-bottom: 40px;
+}
+#nne h3 { padding-bottom: 20px; border-bottom: 1px solid #5f2712 }
+
+ul.nne_box { padding: 0; margin: 0; list-style: none }
+ul.nne_box li { border-left: 5px solid #8e7555; padding: 0 0 0 20px; margin: 0 0 20px 0 }
+ul.nne_box li span { display: block; color: #850d2f; }
+ul.nne_box li a { color: #8e7555 }
+
+ul.photo_gallery { padding: 0; margin: 0; list-style: none }
+ul.photo_gallery li { padding: 0; margin: 0 5px 15px 0; display: block; float: left; }
+ul.photo_gallery .rmp { margin: 0 0 15px }
+
+#contact_form {  padding: 0; }
+#contact_form form { margin: 0px; padding: 0px; }
+
+#contact_form form .input_field { color: #000; width: 400px; padding: 5px; background: #FFF; border: 1px solid #960; }
+#contact_form form label { display: block; width: 100px; margin-top: 15px; margin-bottom: 3px; font-size: 14px; }
+
+#contact_form form textarea { font-family: Arial, Helvetica, sans-serif; color: #000; width: 400px;  height: 200px; padding: 5px; background: #FFF; border: 1px solid #960; }
+#contact_form form .submit_btn { color: #420; padding: 7px 14px; margin: 10px; margin-left: 60px; background: #DA7; border: 1px solid #960; }
+
+#member_login {
+	width: 230px;
+	height: 170px;
+	padding: 25px;
+	background: url(images/tpl_login.png)
+}
+
+#member_login h3 {
+	color: #494847;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #b6aa99;
+}
+
+#member_login form {
+	margin: 0;
+	padding: 0;
+}
+
+#member_login label {
+	float: left;
+	width: 80px;
+	color: #62260e;
+}
+
+#member_login .txt_field {
+	float: right;
+	display: block;
+	height: 29px;
+	width: 132px;
+	color: #000;
+	font-size: 12px;
+	padding: 0 5px;
+	font-variant: normal;
+	line-height: normal;
+	background: none;
+	border: none;	
+	line-height: 30px;
+	background: url(images/tpl_txtfield.png) no-repeat 
+}
+#member_login .sub_btn {
+	float: right;
+	display: block;
+ 	height: 32px;
+	width: 87px;
+	cursor: pointer;
+	font-size: 12px;
+	text-align: center;
+	vertical-align: bottom;
+	white-space: pre;
+	color: #000;
+	border: none;
+	background: url(images/tpl_login_btn.png)
+}
+
+/* footer */
+#tpl_footer{
+	clear: both;
+	width: 900px;
+	padding: 0 33px 20px;	
+	color: #999494;
+	text-align: center;
+}
+
+#tpl_footer a { 
+	color: #999494;
+}

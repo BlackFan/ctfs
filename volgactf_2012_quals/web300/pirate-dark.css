@@ -1,0 +1,47 @@
+/* Main containers */
+body {padding:0; margin:0; font:76% Verdana,Tahoma,sans-serif; background-color:#080808; color:#ddd; text-align:center; line-height:1.5em;}
+#wrap {width:980px; text-align:center; margin:0 auto; padding:20px 0 0 0;}
+
+/* Top menu */
+#topmenu {text-align:center;margin:0; width:100%; background-color:#222;}
+#topmenu p {width:980px; text-align:center; font-size:1.2em; line-height:2.5em; color:#aaa; margin:0 auto;}
+#topmenu a {padding:12px 8px 10px 8px; font-weight:400; margin:0 10px 0 0; color:#aaa;border:0;}
+#topmenu a:hover {color:#fff; text-decoration:none;}
+#topmenu a.active {color:#f7c777; background:#2a2a2a;}
+#topmenu a.active:hover {color:#fff; padding:12px 8px 10px 8px;}
+
+/* Header */
+#header {width:100%; margin:0;background-color:#111;border-top:1px dotted #2a2a2a;border-bottom:1px dotted #2a2a2a;}
+#title {width:980px; padding:30px 0; margin:0 auto;text-align:center;}
+h1 {margin:0 auto 5px auto; padding:0; font-size:2.2em; font-weight:400;color:#eee; letter-spacing:-1px; line-height:1.2em;}
+h1 a {color:#eee; font-weight:400; text-decoration:none; border:0;}
+h1 a:hover {color:#fff; text-decoration:none;}
+.slogan {color:#eee; font-size:1.4em; margin:0; padding:0;}
+
+/* HTML Tags */
+a {text-decoration:none; font-weight:400; color:#f7c777;border-bottom:1px dotted #2a2a2a;}
+a:hover {text-decoration:none;border-bottom:1px dotted #f7c777;}
+a img {border:0;}
+h2 {margin:0 0 18px 0; padding:0 0 7px; color:#77cef7; font-size:1.6em; font-weight:400; border-bottom:1px dotted #2a2a2a;}
+h2 a {font-weight:400;}
+h3 {font-size:1.6em; font-weight:400; margin:0 0 10px 0; padding:2px 0; color:#77cef7; font-size:1.2em; font-weight:400; border-bottom:1px dotted #2a2a2a;}
+p {margin:0 0 18px 0;}
+ul {margin:0 0 18px 20px; padding:0;}
+li {margin:0; padding:0 0 0 5px;}
+
+/* Content area */
+#content {text-align:left; padding:5px 0; margin:0 280px 15px 200px; width:510px;}
+#content img {margin:5px 0;}
+#feature {margin:0 0 20px 0;}
+.post {margin:0 0 20px 0; padding:15px 200px 0 50px; width:780px; line-height:1.7em; border:1px dotted #2a2a2a;}
+.postintro {width:70px; padding:4px; background-color:#000; text-align:center; color:#777; font-size:1.1em; float:right; border:1px dotted #2a2a2a; margin:0 15px 10px 15px;}
+.postmeta {text-align:right; color:#666; padding:10px 0 0; border-top: 1px dotted #2a2a2a; font-size:0.9em;}
+
+/* Footer */
+#footer{font-size:0.9em;line-height:1.4em; color:#777; font-weight:400; margin:20px 0;}
+#footer a {color:#777; font-weight:400; text-decoration:none; border-bottom: 1px dotted #888;}
+
+/* Various classes */
+.centered {text-align:center;}
+.hide {display:none;}
+.clear {clear:both; visibility:hidden;}

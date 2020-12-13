@@ -1,0 +1,9 @@
+AddDefaultCharset utf-8
+
+AuthType Basic 
+AuthName "Password Required" 
+AuthUserFile "X:\home\volgactf\www\web500\.htpasswd"
+
+<Limit GET>
+require valid-user
+</Limit>
