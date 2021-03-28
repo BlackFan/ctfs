@@ -1,0 +1,22 @@
+<%- include('components/header'); %>
+
+      <div class="jumbotron text-center mt-5">
+        <p><a href="/?lang=en" class="flag-icon flag-icon-us"></a> <a href="/?lang=ru" class="flag-icon flag-icon-ru"></a></p>
+        <h1 class="display-4" data-i18n="welcome">Welcome to the new online wallet</h1>
+        <p class="lead mt-5" data-i18n="register_tokens">Register and get 100 ντ (Volga Tokens) for free</p>
+        <p class="lead pt-3">
+          <a class="btn btn-primary btn-lg" href="/signup" role="button" data-i18n="signup_button">Create Account</a>
+        </p>
+        <p class="lead">
+          <a class="btn btn-outline-primary btn-lg" href="/login" role="button" data-i18n="login_button">Log In</a>
+        </p>
+
+        <div id="error" class="alert alert-warning alert-dismissible fade show mt-4 d-none" role="alert">
+          <span data-i18n="error">Something is wrong</span>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+
+<%- include('components/footer'); %>

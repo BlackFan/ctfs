@@ -1,0 +1,188 @@
+<%- include('components/header'); %>
+
+      <div class="jumbotron text-center mt-5">
+        <p><a href="/wallet?lang=en" class="flag-icon flag-icon-us"></a> <a href="/wallet?lang=ru" class="flag-icon flag-icon-ru"></a></p>
+        <h1 class="display-4">Volga Wallet</h1>
+        <p class="lead mt-4">
+          <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#walletModal" data-i18n="createWallet">Create wallet</a>
+          <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#transferModal" data-i18n="transfer">Transfer</a>
+          <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#withdrawModal" data-i18n="withdraw">Withdraw</a>       
+          <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Not implemented yet" id="depositButton">
+            <button class="btn btn-primary" type="button" disabled style="pointer-events:none;" data-i18n="deposit">Deposit</button>
+          </span>
+          <a class="btn btn-info" href="https://bot.wallet.volgactf-task.ru/" target="_blank" role="button" data-i18n="bug">Report a Bug</a>   
+          <a class="btn btn-danger" href="/logout" role="button" data-i18n="logout">Logout</a>
+        </p>
+        <table class="table table-striped mt-5">
+          <caption><span data-i18n="total">Total amount</span> <%= sum %> <sup>ντ</sup></caption>
+          <tbody>
+            <% wallets.forEach(function(wallet){ %>
+              <tr>
+                <td class="text-left"><%= wallet.title %></td>
+                <td><small><%= wallet.id %></small></td>
+                <td><%= wallet.balance %> <sup>ντ</sup></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+
+        <div id="error" class="alert alert-warning alert-dismissible fade show mt-4 d-none" role="alert">
+          <span data-i18n="error">Something is wrong</span>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Wallet -->
+      <div class="modal fade" id="walletModal" tabindex="-1" role="dialog" aria-labelledby="walletModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="walletModalLabel" data-i18n="createWallet">Create wallet</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="createForm" class="form-group">
+                <label for="inputWallet" data-i18n="wallet">Wallet</label>
+                <input name="wallet" id="inputWallet" class="form-control" required autofocus>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" data-i18n="close">Close</button>
+              <button type="button" class="btn btn-primary" id="createButton" data-i18n="create">Create</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transfer -->
+      <div class="modal fade" id="transferModal" tabindex="-1" role="dialog" aria-labelledby="transferModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="transferModalLabel" data-i18n="transfer">Transfer</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="transferForm" class="form-group">
+                <label for="fromSelect" data-i18n="from">From</label>
+                <select class="form-control" id="fromSelect" name="from_wallet">
+                  <% wallets.forEach(function(wallet){ %>
+                    <option value="<%= wallet.id %>"><%= wallet.title %> (<%= wallet.balance %> ντ)</option>
+                  <% }); %>
+                </select>
+                <label for="toSelect" class="mt-3" data-i18n="to">To</label>
+                <select class="form-control" id="toSelect" name="to_wallet">
+                  <% wallets.forEach(function(wallet){ %>
+                    <option value="<%= wallet.id %>"><%= wallet.title %> (<%= wallet.balance %> ντ)</option>
+                  <% }); %>
+                </select>
+                <label for="amountInput" class="mt-3" data-i18n="amount">Amount</label>
+                <input name="amount" id="amountInput" class="form-control" required autofocus>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" data-i18n="close">Close</button>
+              <button type="button" class="btn btn-primary" id="transferButton" data-i18n="transfer">Transfer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Withdraw -->
+      <div class="modal fade" id="withdrawModal" tabindex="-1" role="dialog" aria-labelledby="withdrawModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="withdrawModalLabel" data-i18n="withdraw">Withdraw</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div id="withdrawBody" class="modal-body">
+              <form id="withdrawForm" class="form-group">
+                <label for="withdrawSelect" data-i18n="from">From</label>
+                <select class="form-control" id="withdrawSelect" name="wallet">
+                  <% wallets.forEach(function(wallet){ %>
+                    <option value="<%= wallet.id %>"><%= wallet.title %> (<%= wallet.balance %> ντ)</option>
+                  <% }); %>
+                </select>
+              </form> 
+              <div id="withdrawResult" class="d-none" data-i18n="result">Withdrawals are available only to developers or with a balance of more than 150 tokens</div>        
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" data-i18n="close">Close</button>
+              <button type="button" class="btn btn-primary" id="withdrawButton" data-i18n="withdraw">Withdraw</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          $('#transferButton').click(async function(e){
+            e.preventDefault();
+            response = await fetch('/transfer', {
+              credentials: 'include',
+              method: 'POST',
+              body: JSON.stringify({from_wallet: $('#fromSelect').val(), to_wallet: $('#toSelect').val(), amount: parseFloat($('#amountInput').val())}),
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+            response = await response.json()
+            if(!response.success) 
+              location = '/wallet?error'
+            else
+              location = '/wallet'
+          });
+
+          $('#createButton').click(async function(e){
+            e.preventDefault();
+            response = await fetch('/wallet', {
+              credentials: 'include',
+              method: 'POST',
+              body: JSON.stringify({wallet: $('#inputWallet').val()}),
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+            response = await response.json()
+            if(!response.success) 
+              location = '/wallet?error'
+            else
+              location = '/wallet'
+          });
+
+          $('#withdrawButton').click(async function () {
+            response = await fetch('/withdraw', {
+              credentials: 'include',
+              body: JSON.stringify({wallet: $('#withdrawSelect').val()}),
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+            response = await response.json()
+            $('#withdrawResult').removeClass("d-none")
+            if(response.success) 
+              $('#withdrawResult').text(`Congratulations: ${response.money}`)
+          })
+
+          $('#withdrawModal').on('hidden.bs.modal', function () {
+            $('#withdrawResult').addClass("d-none")
+          })
+
+          $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+          })
+        })
+      </script>
+
+
+<%- include('components/footer'); %>

@@ -1,0 +1,18 @@
+CREATE USER 'task'@'localhost' IDENTIFIED WITH mysql_native_password BY 'xxx';
+
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `login` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `wallets` (
+  `id` varchar(100) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `balance` DOUBLE,
+  `user_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `transactions` (`id` int NOT NULL AUTO_INCREMENT, `transaction` JSON, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,50 @@
+<%- include('components/header'); %>
+
+      <div class="jumbotron text-center mt-5">
+          <p><a href="/signup?lang=en" class="flag-icon flag-icon-us"></a> <a href="/signup?lang=ru" class="flag-icon flag-icon-ru"></a></p>
+          <form class="form-signin" action="/signup" method="POST">
+            <h1 class="display-4" data-i18n="signup">Sign up</h1>
+            <div class="row justify-content-md-center">
+              <div class="col-md-6">
+                <label for="inputLogin" class="sr-only" data-i18n="login">Login</label>
+                <input name="login" type="login" id="inputLogin" class="form-control mt-3" placeholder="Login" required autofocus>
+                <label for="inputPassword" class="sr-only" data-i18n="password">Password</label>
+                <input name="password" type="password" id="inputPassword" class="form-control mt-3" placeholder="Password" required pattern=".{8,}" required title="8 characters minimum">
+                <button class="btn btn-lg btn-primary btn-block mt-3" type="button" id="signUpButtor" data-i18n="signup">Sign up</button>
+              </div>
+            </div>
+          </form>
+
+        <div id="error" class="alert alert-warning alert-dismissible fade show mt-4 d-none" role="alert">
+          <span data-i18n="error">Something is wrong</span>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          $('#signUpButtor').click(async function(e) {
+            e.preventDefault();
+            if($('form')[0].checkValidity()) {
+              response = await fetch('/signup', {
+                method: 'POST',
+                body: JSON.stringify({login: $('#inputLogin').val(), password: $('#inputPassword').val()}),
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              })
+              response = await response.json()
+              if(!response.success) 
+                location = '/signup?error'
+              else
+                location = '/wallet'
+            } else {
+              $('form')[0].reportValidity()
+            }
+          })
+        })
+      </script>
+
+<%- include('components/footer'); %>
