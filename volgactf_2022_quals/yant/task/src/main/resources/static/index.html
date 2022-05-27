@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Yet Another Notes Task</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">YetAnotherNotesTask</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" id="navSignup" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navLogin" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Error</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="content">
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+
+    <script id="tempNavbar" type="text/template">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" id="navNotes" href="#">Notes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navLogout" href="#">Logout</a>
+            </li>
+          </ul>
+    </script>
+
+    <script id="tempLogin" type="text/template">
+        <div class="row justify-content-md-center mt-4">
+          <div class="col-md-5">
+            <form id="loginForm">
+              <h1 class="h3 mb-4 font-weight-normal">Login</h1>
+              <input type="text" name="username" class="form-control" placeholder="Login" required autofocus>
+              <input type="password" name="password" class="form-control" placeholder="Password" minlength="6" required>
+              <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" id="loginBtn">Sign in</button>
+            </form>
+          </div>
+        </div>
+    </script>
+
+    <script id="tempSignup" type="text/template">
+        <div class="row justify-content-md-center mt-4">
+          <div class="col-md-5">
+            <form id="signupForm">
+              <h1 class="h3 mb-4 font-weight-normal">Sign Up</h1>
+              <input type="text" name="username" class="form-control" placeholder="Login" required autofocus>
+              <input type="password" name="password" class="form-control" placeholder="Password" minlength="6" required>
+              <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" id="signupBtn">Create Account</button>
+            </form>
+          </div>
+        </div>
+    </script>
+
+    <script id="tempHome" type="text/template">
+      <div class="row justify-content-md-center mt-4">
+        <div class="col-md-5">
+          <form id="addForm">
+            <h1 class="h3 mb-4 font-weight-normal">Add Note</h1>
+            <div class="input-group mb-3">
+              <input type="text" name="text" class="form-control" placeholder="Text" required autofocus>
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="submit" id="addBtn">Add</button>
+              </div>
+            </div>
+          </form>
+        </div>
+       </div>
+      <div class="row justify-content-md-center mt-3">
+      <% _.forEach(notes, function(note) { %>
+        <div class="card ml-2 mr-2 mt-2 mb-2" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Note</h5>
+            <p class="card-text"><%- note.text %></p>
+          </div>
+        </div>
+      <% }); %>
+      </div>
+    </script>
+
+    <script>
+      $( document ).ready(function() {
+        if(localStorage.getItem('userID')) {
+          loadHomepage()
+        } else {
+          template = _.template($('#tempLogin').html())
+          $('#content').html(template())
+          $('#navLogin').parent().addClass('active')
+        }
+      })
+
+      $('.container').on('click', '#navLogin', function() {
+        template = _.template($('#tempLogin').html())
+        $('#content').html(template())
+        $('#navLogin').parent().addClass('active')
+        $('#navSignup').parent().removeClass('active')
+      })
+
+      $('.container').on('click', '#navSignup', function() {
+  	    template = _.template($('#tempSignup').html())
+  	    $('#content').html(template())
+  	    $('#navLogin').parent().removeClass('active')
+  	    $('#navSignup').parent().addClass('active')
+      })
+
+      $('.container').on('click', '#navLogout', function() {
+        localStorage.removeItem('userID')
+        location.reload()
+      })
+
+      $('#content').on('click', '#loginBtn', function() {
+        event.preventDefault()
+        if($("#loginForm")[0].checkValidity()) {
+          $.ajax({
+            dataType: 'json',
+            method: 'POST',
+            url: '/login',
+            contentType: 'application/json',
+            data: JSON.stringify({
+              username: $('input[name=username]').val(), 
+              password: $('input[name=password]').val()
+            }),
+            success: function (data) {
+              if(data.result == 'error') {
+                $('.modal-body').text(data.error)
+                $('.modal').modal('show')
+              } else {
+                localStorage.setItem('userID', data.userID)
+                loadHomepage()
+              }
+            }
+          })
+        } else {
+          $("#loginForm")[0].reportValidity()
+        }
+      })
+
+      $('#content').on('click', '#signupBtn', function() {
+        event.preventDefault()
+        if($("#signupForm")[0].checkValidity()) {
+          $.ajax({
+            dataType: 'json',
+            method: 'POST',
+            url: '/signup',
+            contentType: 'application/json',
+            data: JSON.stringify({
+              username: $('input[name=username]').val(), 
+              password: $('input[name=password]').val()
+            }),
+            success: function (data) {
+              if(data.result == 'error') {
+                $('.modal-body').text(data.error)
+                $('.modal').modal('show')
+              } else {
+                localStorage.setItem('userID', data.userID)
+                loadHomepage()
+              }
+            }
+          })
+        } else {
+          $("#signupForm")[0].reportValidity()
+        }
+      })
+
+      $('#content').on('click', '#addBtn', function() {
+        event.preventDefault()
+        if($("#addForm")[0].checkValidity()) {
+          $.ajax({
+            dataType: 'json',
+            method: 'POST',
+            url: '/add',
+            contentType: 'application/json',
+            data: JSON.stringify({
+              userID: localStorage.getItem('userID'),
+              text: $('input[name=text]').val()
+            }),
+            error: function () {
+              localStorage.removeItem('userID')
+              location.reload()
+            },
+            success: function (data) {
+              loadHomepage()
+            }
+          })
+        } else {
+          $("#addForm")[0].reportValidity()
+        }
+      })
+
+      function loadHomepage() {
+        template = _.template($('#tempNavbar').html())
+        $('#navbarSupportedContent').html(template())
+
+        $.ajax({
+          dataType: 'json',
+          method: 'POST',
+          url: '/notes',
+          contentType: 'application/json',
+          data: JSON.stringify({
+            userID: localStorage.getItem('userID')
+          }),
+          error: function () {
+            localStorage.removeItem('userID')
+            location.reload()
+          },
+          success: function (data) {
+            if(data.result == 'error') {
+              $('.modal-body').text(data.error)
+              $('.modal').modal('show')
+            } else {
+              template = _.template($('#tempHome').html())
+              $('#content').html(template({notes: data.notes}))
+            }
+          }
+        })
+      }
+    </script>
+
+  </body>
+</html>

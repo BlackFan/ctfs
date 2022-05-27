@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>VolgaCTF Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body class="text-center">
+    <header class="d-flex flex-wrap justify-content-center py-2 mb-4">
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a href="#" class="nav-link active">Login</a></li>
+        <li class="nav-item"><a href="signup" class="nav-link">Sign Up</a></li>
+      </ul>
+    </header>
+
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-5">
+          <form method="POST" class="form-signin">
+            <h1 class="h3 mb-4 font-weight-normal">VolgaCTF Login</h1>
+            <input type="text" name="login" class="form-control" placeholder="Login" required autofocus>
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+            <span class="error text-danger"><%= error %></span>
+            <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
