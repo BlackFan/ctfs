@@ -34,7 +34,7 @@ https://github.com/expressjs/cookie-parser/blob/e5862bdb0c1130450a5b50bc07719bec
       req.signedCookies = JSONCookies(req.signedCookies)
 ```
 
-The mysql-await library used in the task uses [sqlstring](xxx), which handles non-string parameters in queries in a very specific way by default.
+The mysql-await library used in the task uses [sqlstring](https://www.npmjs.com/package/sqlstring), which handles non-string parameters in queries in a very specific way by default.
 
 https://github.com/mysqljs/sqlstring/blob/cd528556b4b6bcf300c3db515026935dedf7cfa1/lib/SqlString.js#L170-L184
 ```js
